@@ -200,11 +200,15 @@ div.barra-fondo{
   padding: 20px 0;
 }
 div.barra{
-
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 @media (min-width: 768px){
   div.barra{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     text-align: end;
@@ -223,16 +227,63 @@ div.logo img{
 }
 /* NAVEGACION PRINCIPAL */
 nav.navegacion-principal{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 100%;
+}
+nav.navegacion-principal{
   display: none;
 }
 nav.navegacion-principal a{
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  transition: .5s ease-in-out;
 
+  width: 100%;
+}
+nav.navegacion-principal a:last-of-type{
+  color: #fe4918;
+  border: 2px solid #fe4918;
+  border-radius: 5px;
+}
+nav.navegacion-principal a:hover{
+  background-color: #fe4918;
+  color: #ffffff;
 }
 @media (min-width: 768px){
   nav.navegacion-principal{
     display: block;
-    width: 67%;
+    width: 100%%;
   }
+  nav.navegacion-principal a{
+    padding: 10px;
+  }
+}
+/* MENU MOVIL */
+div.menu-movil{
+  width: 60px;
+  display: block;
+}
+div.menu-movil:hover{
+  cursor: pointer;
+}
+@media (min-width: 768px){
+  div.menu-movil{
+    display: none;
+  }
+}
+div.menu-movil span{
+  height: 8px;
+  margin-bottom: 6px;
+  background-color: #ffffff;
+  display: block;
 }
 /* ==========================================================================
    Helper classes
