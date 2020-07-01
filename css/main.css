@@ -157,6 +157,11 @@ h3{
   display: inline-block;
   transition: .5s ease-in-out;
 }
+.button.transparente{
+  background-color: transparent;
+  border: 2px solid #ffffff
+  
+}
 .button.hollow{
   background-color: #ffffff;
   color: #fe4918;  
@@ -166,6 +171,7 @@ h3{
 .button.hollow:hover{
   background-color: #c5c5c5;
 }
+
 .button:hover{
   background-color: #a33112;  
 }
@@ -633,7 +639,31 @@ footer.info-testimonial cite span{
   display: block;
   text-transform: none;
 }
-
+/* NEWSLETTER */
+div.newsletter{
+  position: relative;
+  height: auto;
+}
+div.newsletter::before{
+  background-image: url(../img/bg-newsletter.jpg);
+  content: '';
+}
+div.newsletter .contenido{
+  padding: 100px 0;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+div.newsletter .contenido p{
+  font-size: 1.2em;
+  text-transform: lowercase;
+}
+div.newsletter .contenido h3{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 7vw;
+  font-family: 'PT Sans', sans-serif;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
