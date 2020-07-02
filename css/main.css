@@ -679,6 +679,48 @@ div.cuenta-regresiva ul li{
     width: 25%;
   }
 }
+/*FOOTER*/
+footer{
+  background-color: #414141;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+footer .contenedor > div{
+  color: #ffffff;
+  padding: 0 20px;
+  font-size: 12px;
+}
+@media (min-width: 768px){
+  footer .flexbox-footer{
+    display: flex;
+  }
+  footer .contenedor > div{
+    width: 33.3%;
+  }
+}
+footer h3{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 20px;
+}
+footer h3 span{
+  color: #fe4918;
+}
+footer .ultimos-tweets li{
+  margin-bottom: 20px;
+}
+footer nav.redes-sociales{
+  text-align: left;
+}
+p.copyright{
+  background-color: #2e2e2e;
+  color: #ffffff;
+  padding: 20px 0;
+  margin: 0;
+  margin-top: 20px;
+  text-align: center;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
