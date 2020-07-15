@@ -1,9 +1,22 @@
 (function () {
   'use strict';
 
+  console.log("DOM fully loaded and parsed");
+
   var regalo = document.getElementById('regalo');
   document.addEventListener('DOMContentLoaded', function () {
 
+    if (document.getElementById('mapa')) {
+    var map = L.map('mapa').setView([10.167943, -64.690901], 16);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([10.167943, -64.690901]).addTo(map)
+      .bindPopup('GDLWebCamp <br> Boletos ya disponibles')
+      .openPopup();
+    }
     // CAMPOS DATOS USUARIOS 
     var nombre = document.getElementById('nombre');
     var apellido = document.getElementById('apellido');
@@ -26,6 +39,7 @@
     var camisas = document.getElementById('camisa_evento');
     var etiquetas = document.getElementById('etiquetas');
 
+    if(document.getElementById('calcular')){
     calcular.addEventListener('click', calcularMontos);
 
     pase_dia.addEventListener('blur', mostrarDias);
@@ -35,20 +49,33 @@
     nombre.addEventListener('blur', validarCampos);
     apellido.addEventListener('blur', validarCampos);
     email.addEventListener('blur', validarCampos);
+    email.addEventListener('blur', validarMail);
 
-    function validarCampos(){
-      if(this.value == ''){
+    function validarCampos() {
+      if (this.value == '') {
         errorDiv.style.display = 'block';
         errorDiv.innerHTML = "Este campo es obligatorio";
         this.style.border = '1px solid red';
         errorDiv.style.border = '1px solid red';
         errorDiv.style.textAlign = 'center'
-      }
-      else{
+      } else {
         errorDiv.style.display = 'none';
         this.style.border = '1px solid #00ff00';
-      }
+      };
     };
+
+    function validarMail() {
+      if (this.value.indexOf('@') > -1) {
+        errorDiv.style.display = 'none';
+        this.style.border = '1px solid #00ff00';
+      } else {
+        errorDiv.style.display = 'block';
+        errorDiv.innerHTML = "Debe tener al menos un @";
+        this.style.border = '1px solid red';
+        errorDiv.style.border = '1px solid red';
+        errorDiv.style.textAlign = 'center'
+      };
+    }
 
 
     function calcularMontos(event) {
@@ -143,6 +170,66 @@
       }
 
     }
+  }
   }); //DOM CONTENT LOADED
 
 })();
+
+
+$(function() {
+
+  //LETTERING
+  $('.nombre-sitio').lettering();
+
+  //MENU FIJO
+  var windowHeight = $(window).height();
+  var barraAltura = $('.barra').innerHeight();
+
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+
+    if(scroll > windowHeight){
+      $('.barra-fondo').addClass('fixed');
+      $('body').css({'margin-top': barraAltura+'px'})
+    } else {
+      $('.barra-fondo').removeClass('fixed');
+      $('body').css({'margin-top': '0px'});
+    }
+  })
+
+  // MENU RESPONSIVE
+  $('.menu-movil').on('click', function(){
+    $('.navegacion-principal').slideToggle();
+  })
+
+
+  // PROGRAMA DE CONFERENCIAS
+  $('.programa-evento .info-curso:first').show();
+  $('.menu-programa a:first').addClass('activo');
+
+  $('.menu-programa a').on('click', function(){
+    $('.menu-programa a').removeClass('activo')
+    $('.ocultar').hide();
+    $(this).addClass('activo');
+    var enlace = $(this).attr('href');
+    $(enlace).fadeIn(500);
+
+    return false
+  })
+
+  // ANIMACION PARA LOS NUMEROS
+  $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 2000);
+  $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 2000);
+  $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 2000);
+  $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 2000);
+
+  // CUENTA REGRESIVA
+  $('.cuenta-regresiva').countdown('2021/4/7 00:00:00', function(event){
+
+    $('#dias').html(event.strftime('%D'));
+    $('#horas').html(event.strftime('%H'));
+    $('#minutos').html(event.strftime('%M'));
+    $('#segundos').html(event.strftime('%S'));
+
+  });
+});

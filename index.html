@@ -22,6 +22,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -68,7 +69,7 @@
       </div>
 
       <nav class="navegacion-principal">
-        <a href="#">Conferencia</a>
+        <a href="conferencia.html">Conferencia</a>
         <a href="#">Calendario</a>
         <a href="#">Invitado</a>
         <a href="registro.html">Reservaciones</a>
@@ -123,6 +124,42 @@
             <a href="#" class="button"> Ver Todos</a>
           </div>
           <!--TALLERES-->
+
+          <div id="conferencias" class="info-curso ocultar">
+            <div class="detalle-evento">
+              <h3>Como ser freelancer</h3>
+              <p><i class="fas fa-clock"></i>10:00 HRS</p>
+              <p><i class="fas fa-calendar"></i>10 de Jul</p>
+              <p><i class="fas fa-user"></i>Gregorio Sanchez</p>
+            </div>
+
+            <div class="detalle-evento">
+              <h3>Tecnologias del futuro</h3>
+              <p><i class="fas fa-clock"></i>17:00 HRS</p>
+              <p><i class="fas fa-calendar"></i>10 de Jul</p>
+              <p><i class="fas fa-user"></i>Susan Sanchez</p>
+            </div>
+            <a href="#" class="button"> Ver Todos</a>
+          </div>
+          <!--CONFERENCIAS-->
+
+          <div id="seminarios" class="info-curso ocultar">
+            <div class="detalle-evento">
+              <h3>Diseño UI/UX para moviles</h3>
+              <p><i class="fas fa-clock"></i>17:00 HRS</p>
+              <p><i class="fas fa-calendar"></i>11 de Jul</p>
+              <p><i class="fas fa-user"></i>Harold Garcia</p>
+            </div>
+
+            <div class="detalle-evento">
+              <h3>Aprende a programar en una mañana</h3>
+              <p><i class="fas fa-clock"></i>10:00 HRS</p>
+              <p><i class="fas fa-calendar"></i>11 de Jul</p>
+              <p><i class="fas fa-user"></i>Susana Garcia</p>
+            </div>
+            <a href="#" class="button"> Ver Todos</a>
+          </div>
+          <!--SEMINARIOS-->
         </div>
         <!--programa-evento-->
       </div>
@@ -186,16 +223,16 @@
     <div class="contenedor">
       <ul class="resumen-evento">
         <li>
-          <p class="numero">6</p>Invitados
+          <p class="numero"></p>Invitados
         </li>
         <li>
-          <p class="numero">15</p>Talleres
+          <p class="numero"></p>Talleres
         </li>
         <li>
-          <p class="numero">3</p>Dias
+          <p class="numero"></p>Dias
         </li>
         <li>
-          <p class="numero">9</p>Conferencias
+          <p class="numero"></p>Conferencias
         </li>
       </ul>
     </div>
@@ -316,16 +353,16 @@
     <div class="cuenta-regresiva contenedor">
       <ul class="flexbox-regresiva">
         <li>
-          <p class="numero">80</p>Dias
+          <p id="dias" class="numero"></p>Dias
         </li>
         <li>
-          <p class="numero">15</p>Horas
+          <p id="horas" class="numero"></p>Horas
         </li>
         <li>
-          <p class="numero">5</p>Minutos
+          <p id="minutos" class="numero"></p>Minutos
         </li>
         <li>
-          <p class="numero">30</p>Segundos
+          <p id="segundos" class="numero"></p>Segundos
         </li>
       </ul>
     </div>
@@ -369,15 +406,27 @@
     </p>
   </footer>
 
-
+  <script src="js/jquery.js"></script>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.lettering.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
