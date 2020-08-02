@@ -790,7 +790,7 @@ p.copyright{
 
 /******************************************************************* INTERNAS ***************************/
 /* CONFERENCIA */
-body.conferencia .navegacion-principal .activo{
+.navegacion-principal .activo{
   border-bottom: 2px solid #fe4918;
 }
 div.galeria{
@@ -903,6 +903,54 @@ div.resumen input{
   text-align: center;
   font-size: 2em;
   color: #fe4918;
+}
+
+/* CALENDARIO */
+div.calendario h3{
+  background-color: #fe4918;
+  color: white;
+  clear: both;
+  text-align: center;
+  padding: 10px;
+}
+div.calendario::after{
+  clear: both;
+  display: block;
+  content: '';
+}
+div.dia {
+  width: 50%;
+  float: left;
+  border: 2px solid #e1e1e1;
+}
+@media (min-width: 768px){
+  div.dia {
+    width: 33.3%;
+    min-height: 240px;
+    padding-top: 20px;
+  }
+}
+div.dia:hover{
+  background-color: #e1e1e1;
+  -webkit-transform: scale(1.1);
+  transition: .5s ease-in-out;
+}
+div.dia p.titulo{
+  color: #fe4918;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+div.dia p{
+  font-size: 1em;
+}
+div.dia i{
+  color: #fe4918;
+  font-size: 1.6em;
+}
+/* COLORBOX */
+div.cboxElement{
+  padding: 30px!important;
+  text-align: center;
 }
 /* ==========================================================================
    Helper classes

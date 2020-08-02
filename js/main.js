@@ -181,6 +181,10 @@ $(function() {
   //LETTERING
   $('.nombre-sitio').lettering();
 
+  // AGREGAR CLASE A MENU
+  $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+  $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+  $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
   //MENU FIJO
   var windowHeight = $(window).height();
   var barraAltura = $('.barra').innerHeight();
@@ -231,5 +235,12 @@ $(function() {
     $('#minutos').html(event.strftime('%M'));
     $('#segundos').html(event.strftime('%S'));
 
+  });
+
+  // LLAMANDO PLUGIN DE COLORBOX
+
+  $('.invitado-info').colorbox({
+    inline: true,
+    width: "50%",
   });
 });
