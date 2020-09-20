@@ -43,8 +43,7 @@
 
         ?>
 
-        <?php } //While 
-        ?>
+        <?php } //While ?>
 
         <?php
         // Imprime todo los eventos

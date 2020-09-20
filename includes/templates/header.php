@@ -21,18 +21,19 @@
     <script src="https://kit.fontawesome.com/9f7638dd14.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <?php
-        $archivo = basename($_SERVER['PHP_SELF']);
-        $pagina = str_replace(".php", "", $archivo);
-        if($pagina == 'invitados' || $pagina == 'index'){
-            echo '<link rel="stylesheet" href="css/colorbox.css">';
-        } else if ($pagina == 'conferencia') {
-           echo '<link rel="stylesheet" href="css/lightbox.css">';
-        }
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php", "", $archivo);
+    if ($pagina == 'invitados' || $pagina == 'index') {
+        echo '<link rel="stylesheet" href="css/colorbox.css">';
+    } else if ($pagina == 'conferencia') {
+        echo '<link rel="stylesheet" href="css/lightbox.css">';
+    }
     ?>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
     <link rel="stylesheet" href="css/main.css">
 
     <meta name="theme-color" content="#fafafa">
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/3e33c3e526a492b6116bb1eec/3d5ee6d38b8b62b4790a54f53.js");</script>
 </head>
 
 <body class="<?php echo $pagina; ?>">

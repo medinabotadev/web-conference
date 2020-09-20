@@ -51,6 +51,8 @@
     email.addEventListener('blur', validarCampos);
     email.addEventListener('blur', validarMail);
 
+    btnRegistro.disabled = true;
+
     function validarCampos() {
       if (this.value == '') {
         errorDiv.style.display = 'block';
@@ -136,6 +138,9 @@
         }
 
         suma.innerHTML = '$ ' + totalPagar.toFixed(2)
+
+        btnRegistro.disabled = false;
+        document.getElementById('total_pedido').value = totalPagar.toFixed(2)
       }
     }
 
