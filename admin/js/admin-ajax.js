@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#crear-admin').on('submit', function(e){
+    $('#guardar-registro').on('submit', function(e){
         e.preventDefault();
 
         var datos = $(this).serializeArray();
@@ -10,11 +10,12 @@ $(document).ready(function(){
             data: datos,
             dataType: 'json',
             success: function (data) {
+                console.log(data);
                 var resultado = data;
                 if(resultado.respuesta == 'exito'){
                     Swal.fire(
                         'Correcto',
-                        'El administrador se creo correctamente',
+                        'Se guardo correctamente',
                         'success'
                       )
                 } else {
@@ -47,6 +48,9 @@ $(document).ready(function(){
                         'Bienvenido(a) '+resultado.usuario+'!',
                         'success'
                       )
+                      setTimeout(function(){
+                        window.location.href = 'admin-area.php';
+                      }, 2000)
                 } else {
                     Swal.fire({
                         icon: 'error',

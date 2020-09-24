@@ -12,6 +12,9 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- overlayScrollbars -->
+  <!-- Tables -->
+  <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="css/responsive.bootstrap4.css">
   <link rel="stylesheet" href="css/adminlte.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.3.2/dist/sweetalert2.css">
   <link rel="stylesheet" href="css/admin.css">
