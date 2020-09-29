@@ -36,13 +36,18 @@ if ($_POST['registro'] == 'nuevo') {
 }
 
 if ($_POST['registro'] == 'actualizar') {
-    $opciones = array(
-        'cost' => 12
-    );
     try {
+        if (empty($_POST['password'])) {
+            $stmt = $conn->prepare(" UPDATE admins SET usuario = ?, nombre = ?, editado = NOW() WHERE id_admin = ? ");
+            $stmt->bind_param("ssi", $usuario, $nombre, $id_registro);
+        } else {
+        $opciones = array(
+            'cost' => 12
+        );
         $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
-        $stmt = $conn->prepare(" UPDATE admins SET usuario = ?, nombre = ?,  password = ? WHERE id_admin = ? ");
+        $stmt = $conn->prepare(" UPDATE admins SET usuario = ?, nombre = ?,  password = ?, editado = NOW() WHERE id_admin = ? ");
         $stmt->bind_param("sssi", $usuario, $nombre, $hash_password, $id_registro);
+        };
         $stmt->execute();
         if ($stmt->affected_rows) {
             $respuesta = array(
@@ -65,44 +70,32 @@ if ($_POST['registro'] == 'actualizar') {
     die(json_encode($respuesta));
 }
 
-if (isset($_POST['login-admin'])) {
-    $usuario = $_POST['usuario'];
-    $password = $_POST['password'];
+if ($_POST['registro'] == 'eliminar') {
+    $id_borrar = $_POST['id'];
 
     try {
-        include_once 'funciones/funciones.php';
-        $stmt = $conn->prepare(" SELECT * FROM admins WHERE usuario = ?; ");
-        $stmt->bind_param("s", $usuario);
+        $stmt = $conn->prepare(' DELETE FROM admins WHERE id_admin = ? ');
+        $stmt->bind_param('i', $id_borrar);
         $stmt->execute();
-        $stmt->bind_result($id_admin, $usuario_admin, $nombre_admin, $password_admin);
         if ($stmt->affected_rows) {
-            $existe = $stmt->fetch();
-            if ($existe) {
-                if(password_verify($password, $password_admin)){
-                    session_start();
-                    $_SESSION['usuario'] = $usuario_admin;
-                    $_SESSION['nombre'] = $nombre_admin;
-                    $respuesta = array(
-                        'respuesta' => 'exitoso',
-                        'usuario' => $nombre_admin
-                    );
-                } else {
-                    $respuesta = array(
-                        'respuesta' => 'password_incorrecto'
-                    );
-                }
-            } else {
-                $respuesta = array(
-                    'respuesta' => 'no_existe'
-                );
-            }
+            $respuesta = array(
+                'respuesta' => 'exito',
+                'id_eliminado' => $id_borrar
+            );
+        } else {
+            $respuesta = array(
+                'respuesta' => 'error'
+            );
         }
         $stmt->close();
         $conn->close();
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
     }
 
     die(json_encode($respuesta));
 }
+
 ?>

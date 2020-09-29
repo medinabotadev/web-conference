@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Crear Administrador</h1>
+            <h1>Editar administrador</h1>
           </div>
           <div class="col-sm-6">
           </div>
@@ -33,7 +33,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Crea un administrador</h3>
+                <h3 class="card-title">Editar administrador</h3>
               </div>
               <!-- /.card-header -->
               <?php
@@ -62,7 +62,7 @@
                 <div class="card-footer">
                   <input type="hidden" name="registro" value="actualizar">
                   <input type="hidden" name="id_registro" value="<?php echo $id; ?>">
-                  <button type="submit" class="btn btn-primary">Añadir</button>
+                  <button type="submit" class="btn btn-primary" id="agregar">Guardar</button>
                 </div>
               </form>
             </div>

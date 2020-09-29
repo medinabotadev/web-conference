@@ -10,7 +10,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">Jesus Medina</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['nombre']; ?></a>
         </div>
       </div>
 
@@ -127,6 +127,7 @@
             </ul>
           </li>
 
+          <?php if ($_SESSION['nivel'] == 1) { ?>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
@@ -149,6 +150,7 @@
               </li>
             </ul>
           </li>
+          <?php } ?>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
