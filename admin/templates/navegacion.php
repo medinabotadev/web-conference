@@ -45,13 +45,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="lista-evento.php" class="nav-link">
                   <i class="fas fa-list nav-icon"></i>
                   <p>Ver Todos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="crear-evento.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Agregar un evento</p>
                 </a>

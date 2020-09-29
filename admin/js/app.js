@@ -17,7 +17,7 @@
       }
     });
 
-    $('#crear_registro').attr('disabled', true);
+    $('#crear_registro_admin').attr('disabled', true);
 
     $('#repetir_password').on('input', function(){
         var password_nuevo = $('#password').val();
@@ -26,12 +26,36 @@
           $('#resultado_password').text('Correcto');
           $('#resultado_password').parents('.form-group').addClass('has-success').removeClass('has-error');
           $('input#resultado').parents('.form-group').addClass('has-success').removeClass('has-error');
-          $('#crear_registro').attr('disabled', false);
+          $('#crear_registro_admin').attr('disabled', false);
         } else {
           $('#resultado_password').text('No son iguales');
           $('#resultado_password').parents('.form-group').addClass('has-error').removeClass('has-success');
           $('input#resultado').parents('.form-group').addClass('has-error').removeClass('has-success');
-          $('#crear_registro').attr('disabled', true);
+          $('#crear_registro_admin').attr('disabled', true);
         }
     });
+
+
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+        //Initialize Select2 Elements
+    $('.select2bs4').select2({
+          theme: 'bootstrap4'
+    })
+ 
+    // Fecha Evento
+    $('#fecha').datetimepicker({
+        format: 'L'
+    });
+ 
+    // Hora
+    $('#timepicker').datetimepicker({
+        format: 'LT'
+    });
+
+    $('#reservationdate').datetimepicker({
+      format: 'MM/DD/YYYY'
+    });
+
   });

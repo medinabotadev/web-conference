@@ -53,6 +53,7 @@ $(document).ready(function(){
                     'registro' : 'eliminar'
                 },
                 success: function (data) {
+                    console.log(data);
                     var resultado = JSON.parse(data);
                     jQuery('[data-id="'+resultado.id_eliminado+'"]').parents('tr').remove();
                     

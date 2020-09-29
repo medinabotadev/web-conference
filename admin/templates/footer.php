@@ -24,7 +24,12 @@
 <script src="js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-
+<!-- FECHA -->
+<script src="js/select2.full.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/jquery.inputmask.bundle.min.js"></script>
+<script src="js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="js/daterangepicker.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.3.2/dist/sweetalert2.all.js"></script>
 <script src="js/admin-ajax.js"></script>
 <!-- AdminLTE for demo purposes -->

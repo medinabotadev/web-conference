@@ -12,6 +12,11 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- overlayScrollbars -->
+  <!-- FECHA -->
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="css/select2-bootstrap4.min.css">
+  <link rel="stylesheet" href="css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="css/icheck-bootstrap.min.css">
   <!-- Tables -->
   <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="css/responsive.bootstrap4.css">
