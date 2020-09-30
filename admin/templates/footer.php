@@ -31,6 +31,7 @@
 <script src="js/tempusdominus-bootstrap-4.min.js"></script>
 <script src="js/daterangepicker.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.3.2/dist/sweetalert2.all.js"></script>
+<script src="js/fontawesome-iconpicker.js"></script>
 <script src="js/admin-ajax.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>

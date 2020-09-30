@@ -1,4 +1,6 @@
 /* .user-panel{
     height: 60px;
 } */
-
+.fade.in {
+    opacity: 1;
+}

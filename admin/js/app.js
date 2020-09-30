@@ -58,4 +58,5 @@
       format: 'MM/DD/YYYY'
     });
 
+    $('#icono').iconpicker();
   });
