@@ -60,3 +60,70 @@
 
     $('#icono').iconpicker();
   });
+
+  $.getJSON('servicio-registrados.php', function(data){
+    console.log(data);
+    var fecha_registro=[];
+    var cantidad_registro=[]; 
+
+    for(var i=0; i< data.length; i++){
+         fecha_registro[i]=data[i].fecha;
+         cantidad_registro[i]=data[i].cantidad;
+    }
+  
+     console.log(fecha_registro);
+  
+     console.log(cantidad_registro);
+
+var areaChartData = {
+  labels  : fecha_registro,
+  datasets: [
+    {
+      label               : 'Registrados',
+      backgroundColor     : 'rgba(60,141,188,0.9)',
+      borderColor         : 'rgba(60,141,188,0.8)',
+      pointRadius          : true,
+      pointColor          : '#FFFFFF',
+      pointStrokeColor    : '#FFFFFF',
+      pointRadius         : '3',
+      pointHighlightFill  : '#fff',
+      pointHighlightStroke: '#FFFFFF',
+      data                : cantidad_registro
+    }
+  ]
+}
+
+var areaChartOptions = {
+  maintainAspectRatio : false,
+  responsive : true,
+  legend: {
+    display: true
+  },
+  scales: {
+    xAxes: [{
+      gridLines : {
+        display : false,
+      }
+    }],
+    yAxes: [{
+      gridLines : {
+        display : true,
+      }
+    }]
+  }
+}
+
+var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
+var lineChartData = jQuery.extend(true, {}, areaChartData)
+lineChartData.datasets[0].fill = false;
+/* lineChartData.datasets[1].fill = false; */
+lineChartOptions.datasetFill = false
+
+var lineChart = new Chart(lineChartCanvas, { 
+  type: 'line',
+  data: lineChartData, 
+  options: lineChartOptions
+})
+
+})

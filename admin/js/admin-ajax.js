@@ -68,7 +68,7 @@ $(document).ready(function(){
     // ELIMINAR UN REGISTRO
     $('.borrar_registro').on('click', function(e){
         e.preventDefault();
-
+        console.log("Haz echo click");
         var id = $(this).attr('data-id');
         var tipo = $(this).attr('data-tipo');
 

@@ -33,6 +33,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.3.2/dist/sweetalert2.all.js"></script>
 <script src="js/fontawesome-iconpicker.js"></script>
 <script src="js/admin-ajax.js"></script>
+<script src="js/cotizador.js"></script>
+<script src="js/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <script src="js/login-ajax.js"></script>

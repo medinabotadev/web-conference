@@ -9,14 +9,7 @@
 
       <div class="ultimos-tweets">
         <h3>Ultimos <span>Tweets</span></h3>
-        <ul>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequatur tempore animi quibusdam ab
-            quia sapiente rem reprehenderit</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequatur tempore animi quibusdam ab
-            quia sapiente rem reprehenderit</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequatur tempore animi quibusdam ab
-            quia sapiente rem reprehenderit</li>
-        </ul>
+        <a class="twitter-timeline" data-lang="es" data-height="400" href="https://twitter.com/chuitojemb?ref_src=twsrc%5Etfw">Tweets by chuitojemb</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
 
       <div class="menu">
@@ -42,6 +35,7 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/jquery.countdown.min.js"></script>
   <script src="js/jquery.lettering.js"></script>
+  <script src="js/cotizador.js"></script>
   <?php
         $archivo = basename($_SERVER['PHP_SELF']);
         $pagina = str_replace(".php", "", $archivo);
